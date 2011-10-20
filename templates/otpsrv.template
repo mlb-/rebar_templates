@@ -1,0 +1,2 @@
+{variables, [{srvid, "myserver"}]}.
+{template, "otpsrv.erl", "src/{{srvid}}.erl"}.

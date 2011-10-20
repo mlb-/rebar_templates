@@ -1,0 +1,10 @@
+{variables, [{appid, "myapp"}]}.
+{file, "simpleapp_readme.md", "README.md"}.
+{file, "simpleapp_rebar.config", "rebar.config"}.
+{template, "simpleapp_dev.sh", "dev.sh"}.
+{chmod, 8#744, "dev.sh"}.
+{template, "simpleapp_wrapper.erl", "src/{{appid}}.erl"}.
+{template, "simpleapp.app.src", "src/{{appid}}.app.src"}.
+{template, "simpleapp_app.erl", "src/{{appid}}_app.erl"}.
+{template, "simpleapp_sup.erl", "src/{{appid}}_sup.erl"}.
+{template, "simpleapp_sup_incl.hrl", "include/supervisor.hrl"}.
