@@ -1,0 +1,2 @@
+{variables, [{module, "my_server"}]}.
+{template, "gen_srv.erl", "src/{{module}}.erl"}.
