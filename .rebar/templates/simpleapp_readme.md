@@ -1,7 +1,7 @@
 
-# Application title
-
+# {{app_name}}
 description.
-goals.
-aim.
-other bad ideas.
+## Problem
+## Solution
+
+vim: ft=markdown

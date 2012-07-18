@@ -1,12 +1,13 @@
-{application, {{appid}},
- [
-  {description, ""},
-  {vsn, git},
-  {registered, []},
-  {applications, [
-                  kernel,
-                  stdlib
-                 ]},
-  {mod, { {{appid}}_app, []}},
-  {env, []}
- ]}.
+{application, {{app_name}},
+  [
+    {description, ""},
+    {vsn, git},
+    {registered, []},
+    {applications, [
+        kernel,
+        stdlib
+      ]},
+    {mod, { {{app_name}}_app, []}},
+    {env, []}
+  ]}.
+% vim: ts=4 sw=4 et ft=erlang

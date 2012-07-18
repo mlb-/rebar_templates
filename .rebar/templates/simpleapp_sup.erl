@@ -1,7 +1,6 @@
-
--module({{appid}}_sup).
-
--behaviour(supervisor).
+-module({{app_name}}_sup).
+-behaviour(esupervisor).
+-include_lib("esupervisor/include/esupervisor.hrl").
 
 %% API
 -export([start_link/0]).
@@ -9,19 +8,15 @@
 %% Supervisor callbacks
 -export([init/1]).
 
--include("supervisor.hrl").
-
 %% API functions
--spec start_link() -> 'ignore' | {'error',_Reason} | {'ok',pid()}.
 start_link() ->
-    supervisor:start_link({local, ?MODULE}, ?MODULE, []).
+    esupervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
-%% Supervisor callbacks
-
+%% Supervisor callback
 init([]) ->
-		Children = [
-			%?CHILD({{appid}}_worker, worker)
-			%?CHILD({{appid}}_other_sup, supervisor)
-		],
-    {ok, { {one_for_one, 5, 10}, Children} }.
+    #one_for_one{ % Application supervisor
+        children = [
+            ]
+        }.
 
+% vim: set ts=4 sw=4 et:

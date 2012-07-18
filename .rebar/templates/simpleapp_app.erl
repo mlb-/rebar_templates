@@ -1,14 +1,13 @@
--module({{appid}}_app).
+-module({{app_name}}_app).
 
 -behaviour(application).
 
-%% application API
+%% OTP API
 -export([start/2, stop/1]).
 
-%% application functions
-
+%% application callbacks
 start(_StartType, _StartArgs) ->
-    {{appid}}_sup:start_link().
+	{{app_name}}_sup:start_link().
 
 stop(_State) ->
-    ok.
+	ok.
