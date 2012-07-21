@@ -19,7 +19,7 @@ init([]) ->
     {ok, {}}.
 
 handle_call(_Request, _From, State) ->
-    {noreply, ok, State}.
+    {reply, ok, State}.
 
 handle_cast(_Msg, State) ->
     {noreply, State}.
