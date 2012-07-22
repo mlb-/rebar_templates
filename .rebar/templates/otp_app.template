@@ -1,5 +1,5 @@
 {variables, [{app_name, "my_app"}]}.
-{file, "otp_app_readme.md", "README.md"}.
+{template, "otp_app_readme.md", "README.md"}.
 {file, "otp_app_rebar.config", "rebar.config"}.
 {template, "Makefile.otp_app", "Makefile"}.
 {template, "otp_app_api_wrapper.erl", "src/{{app_name}}.erl"}.
