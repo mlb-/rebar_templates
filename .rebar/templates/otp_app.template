@@ -1,8 +1,8 @@
 {variables, [{app_name, "my_app"}]}.
-{file, "simpleapp_readme.md", "README.md"}.
-{file, "simpleapp_rebar.config", "rebar.config"}.
-{template, "Makefile.simpleapp", "Makefile"}.
-{template, "simpleapp_api_wrapper.erl", "src/{{app_name}}.erl"}.
-{template, "simpleapp.app.src", "src/{{app_name}}.app.src"}.
-{template, "simpleapp_app.erl", "src/{{app_name}}_app.erl"}.
-{template, "simpleapp_sup.erl", "src/{{app_name}}_sup.erl"}.
+{file, "otp_app_readme.md", "README.md"}.
+{file, "otp_app_rebar.config", "rebar.config"}.
+{template, "Makefile.otp_app", "Makefile"}.
+{template, "otp_app_api_wrapper.erl", "src/{{app_name}}.erl"}.
+{template, "otp_app.app.src", "src/{{app_name}}.app.src"}.
+{template, "otp_app_app.erl", "src/{{app_name}}_app.erl"}.
+{template, "otp_app_sup.erl", "src/{{app_name}}_sup.erl"}.
