@@ -2,12 +2,14 @@
 -behaviour(esupervisor).
 -include_lib("esupervisor/include/esupervisor.hrl").
 
+%%% Exports
 %% API
 -export([start_link/0]).
 
 %% Supervisor callbacks
 -export([init/1]).
 
+%%% Functions
 %% API functions
 start_link() ->
     esupervisor:start_link({local, ?MODULE}, ?MODULE, []).
@@ -18,5 +20,3 @@ init([]) ->
         children = [
             ]
         }.
-
-% vim: set ts=4 sw=4 et:

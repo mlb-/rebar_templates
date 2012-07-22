@@ -32,5 +32,3 @@ terminate(_Reason, _State) ->
 
 code_change(_OldVsn, State, _Extra) ->
     {ok, State}.
-
-% vim: sw=4 ts=4 et

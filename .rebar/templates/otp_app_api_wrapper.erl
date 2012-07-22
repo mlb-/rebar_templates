@@ -1,8 +1,8 @@
 -module({{app_name}}).
 
-% API
+%%% API
 -export([start/0]).
 
-% functions
-start() -> application:start(?MODULE).
-
+%%% Functions
+start() ->
+    application:start(?MODULE).

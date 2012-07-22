@@ -1,5 +1,4 @@
 -module({{app_name}}_app).
-
 -behaviour(application).
 
 %% OTP API
@@ -7,7 +6,7 @@
 
 %% application callbacks
 start(_StartType, _StartArgs) ->
-	{{app_name}}_sup:start_link().
+    {{app_name}}_sup:start_link().
 
 stop(_State) ->
-	ok.
+    ok.
