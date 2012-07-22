@@ -8,11 +8,11 @@ all: compile
 clean:
 	@./rebar clean
 
-deps: 
+deps:
 	@./rebar get-deps
 
 compile: deps
 	@./rebar compile
 
 dev: clean compile
-	erl -pa ebin deps/*/ebin -s sync -s $(APPID)
+	erl -pa ebin deps/*/ebin -s sync -s $(APP)
