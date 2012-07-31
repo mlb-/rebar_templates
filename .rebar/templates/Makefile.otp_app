@@ -15,4 +15,4 @@ compile: deps
 	@./rebar compile
 
 dev: clean compile
-	erl -pa ebin deps/*/ebin -s $(APP)
+	erl -pa ../{{app_name}}/ebin deps/*/ebin -s $(APP)
