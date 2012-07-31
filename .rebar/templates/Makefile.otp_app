@@ -15,4 +15,4 @@ compile: deps
 	@./rebar compile
 
 dev: clean compile
-	erl -pa ebin deps/*/ebin -s sync -s $(APP)
+	erl -pa ebin deps/*/ebin -s $(APP)

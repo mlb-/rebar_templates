@@ -6,6 +6,9 @@
   {applications, [
                   kernel,
                   stdlib
+                  % When the following is uncommented, verify the corresponding
+                  % line is uncommented in rebar.config
+                  %,sync
                  ]},
   {mod, {
          {{app_name}}_app,
