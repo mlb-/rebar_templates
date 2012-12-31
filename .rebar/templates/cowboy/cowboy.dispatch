@@ -1,0 +1,15 @@
+% @todo: Remember to increase acceptor pool size
+{acceptors, 10}.
+{port, 8080}.
+{dispatch, [
+            %{Host, list({Path, Handler, Opts})}
+            {'_', [ % Any host
+                   % default landing
+                   {[], {{app_name}}_default_handler, []},
+                   % static content
+                   {[<<"static">>, '...'], cowboy_static,
+                     [
+                      {directory, {priv_dir, {{app_name}}, <<"cowboy/static">>}}
+                     ]}
+                  ]}
+           ]}.

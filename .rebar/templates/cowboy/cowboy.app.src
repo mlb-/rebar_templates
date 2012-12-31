@@ -1,0 +1,23 @@
+{application, {{app_name}},
+ [
+  {description, ""},
+  {vsn, git},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  cowboy
+                  % When the following is uncommented, verify the corresponding
+                  % line is uncommented in rebar.config
+                  %,sync
+                 ]},
+  {mod, {
+         {{app_name}}_app,
+         [
+         ]}},
+  {env, []},
+  {start_phases, [
+                  {cowboy, []}
+                 ]}
+ ]}.
+% vim: ft=erlang
