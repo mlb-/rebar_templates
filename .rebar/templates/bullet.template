@@ -1,0 +1,15 @@
+{variables, [{app_name, "my_app"}]}.
+{template, "otp/Makefile", "{{app_name}}/Makefile"}.
+{template, "otp/README.md", "{{app_name}}/README.md"}.
+{template, "otp/otp.erl", "{{app_name}}/src/{{app_name}}.erl"}.
+{template, "otp/otp_sup.erl", "{{app_name}}/src/{{app_name}}_sup.erl"}.
+{file, "otp/rebar", "{{app_name}}/rebar"}.
+{chmod, 8#744, "{{app_name}}/rebar"}.
+
+{file, "bullet/rebar.config", "{{app_name}}/rebar.config"}.
+{template, "bullet/bullet_handler.erl", "{{app_name}}/src/{{app_name}}_bullet_handler.erl"}.
+{template, "bullet/bullet.html", "{{app_name}}/priv/cowboy/static/bullet.html"}.
+{template, "bullet/bullet.dispatch", "{{app_name}}/priv/cowboy.dispatch"}.
+{template, "bullet/bullet_app.erl", "{{app_name}}/src/{{app_name}}_app.erl"}.
+
+{template, "cowboy/cowboy.app.src", "{{app_name}}/src/{{app_name}}.app.src"}.

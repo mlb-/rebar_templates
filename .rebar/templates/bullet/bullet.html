@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>{{app_name}}</title>
+	</head>
+
+	<body>
+		<p>Connection status: <span id="status">bullet not started</span></p>
+		<p>Last message: <span id="ws">unknown</span></p>
+
+		<script
+			src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+		</script>
+		<script src="/static/bullet.js"></script>
+		<script type="text/javascript">
+			// <![CDATA[
+			$(document).ready(function(){
+				var bullet = $.bullet('ws://localhost:8080/bullet');
+				bullet.onopen = function(){
+					$('#status').text('online');
+				};
+				bullet.ondisconnect = function(){
+					$('#status').text('offline');
+				};
+				bullet.onmessage = function(e){
+					if (e.data != 'pong'){
+						$('#ws').text(e.data);
+					}
+				};
+				bullet.onheartbeat = function(){
+					console.log('ping');
+					bullet.send('ping');
+				}
+			});
+			// ]]>
+		</script>
+	</body>
+</html>

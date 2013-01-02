@@ -1,0 +1,30 @@
+% @todo: Remember to increase acceptor pool size
+{acceptors, 10}.
+{port, 8080}.
+{dispatch, [
+            %{Host, list({Path, Handler, Opts})}
+            {'_', [ % Any host
+                   % default landing
+                   {[], cowboy_http_static,
+                    [
+                     {directory, {priv_dir, {{app_name}}, <<"cowboy/static">>}},
+                     {file, <<"bullet.html">>},
+                     {mimetypes, [{<<".html">>, [<<"text/html">>]}]}
+                    ]},
+                   % bullet.js include
+                   {[<<"static">>, <<"bullet.js">>],
+                    cowboy_http_static,
+                    [
+                     {directory, {priv_dir, bullet, []}},
+                     {file, <<"bullet.js">>},
+                     {mimetypes, [{<<".js">>, [<<"application/javascript">>]}]}
+                    ]},
+                   % bullet handler
+                   {[<<"bullet">>], bullet_handler, [{handler, {{app_name}}_bullet_handler}]},
+                   % static content
+                   {[<<"static">>, '...'], cowboy_http_static,
+                     [
+                      {directory, {priv_dir, {{app_name}}, <<"cowboy/static">>}}
+                     ]}
+                  ]}
+           ]}.
