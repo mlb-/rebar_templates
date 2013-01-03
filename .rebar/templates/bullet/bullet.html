@@ -4,11 +4,6 @@
 	<head>
 		<meta charset="utf-8">
 		<title>{{app_name}}</title>
-	</head>
-
-	<body>
-		<p>Connection status: <span id="status">bullet not started</span></p>
-		<p>Last message: <span id="ws">unknown</span></p>
 
 		<script
 			src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
@@ -17,7 +12,7 @@
 		<script type="text/javascript">
 			// <![CDATA[
 			$(document).ready(function(){
-				var bullet = $.bullet('ws://localhost:8080/bullet');
+				var bullet = $.bullet("ws://"+window.location.host+"/bullet");
 				bullet.onopen = function(){
 					$('#status').text('online');
 				};
@@ -36,5 +31,19 @@
 			});
 			// ]]>
 		</script>
+
+	</head>
+
+	<body>
+
+		<p>Connection status: <span id="status">bullet not started</span></p>
+		<p>Last message: <span id="ws">unknown</span></p>
+
+		<h2>Next steps:</h2>
+		<ul>
+			<li>Get <a href="http://twitter.github.com/bootstrap/assets/bootstrap.zip">Bootstrap</a></li>
+			<li>Get <a href="https://github.com/emberjs/starter-kit/downloads">Ember.js</a></li>
+		</ul>
+
 	</body>
 </html>
