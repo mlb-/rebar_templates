@@ -11,7 +11,7 @@ start(_StartType, _StartArgs) ->
 
 start_phase(cowboy, _StartType, _PhaseStartArgs) ->
     Priv = code:priv_dir({{app_name}}),
-    {ok, Out} = file:consult(Priv ++ "/cowboy.dispatch"),
+    {ok, Out} = file:script(Priv ++ "/cowboy.dispatch"),
     [Acceptors, Port, Dispatch] = [proplists:get_value(Key, Out)
                                    || Key <- [acceptors, port, dispatch]],
     {ok, _PID} = cowboy:start_http(cowboy_listener,

@@ -1,6 +1,7 @@
 % @todo: Remember to increase acceptor pool size
-{acceptors, 10}.
-{port, 8080}.
+[
+{acceptors, 10},
+{port, 8080},
 {dispatch, [
             %{Host, list({Path, Handler, Opts})}
             {'_', [ % Any host
@@ -28,4 +29,5 @@
                       {mimetypes, {fun mimetypes:path_to_mimes/2, default}}
                      ]}
                   ]}
-           ]}.
+           ]}
+].
