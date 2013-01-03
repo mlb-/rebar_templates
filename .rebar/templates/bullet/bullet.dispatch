@@ -24,7 +24,8 @@
                    % static content
                    {[<<"static">>, '...'], cowboy_http_static,
                      [
-                      {directory, {priv_dir, {{app_name}}, <<"cowboy/static">>}}
+                      {directory, {priv_dir, {{app_name}}, <<"cowboy/static">>}},
+                      {mimetypes, {fun mimetypes:path_to_mimes/2, default}}
                      ]}
                   ]}
            ]}.
