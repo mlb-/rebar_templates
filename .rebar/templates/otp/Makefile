@@ -1,7 +1,8 @@
 
 APP={{app_name}}
 ERL_ARGS_DEPS=-pa ../$(APP)/ebin deps/*/ebin
-ERL_ARGS=$(ERL_ARGS_DEPS) -s $(APP)
+ERL_ARGS_SASL=-boot start_sasl
+ERL_ARGS=$(ERL_ARGS_DEPS) $(ERL_ARGS_SASL) -s $(APP)
 
 .PHONY: clean deps compile dev
 
