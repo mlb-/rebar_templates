@@ -6,24 +6,24 @@
             %{Host, list({Path, Handler, Opts})}
             {'_', [ % Any host
                    % default landing
-                   {[], cowboy_http_static,
+                   {"/", cowboy_static,
                     [
                      {directory, {priv_dir, {{app_name}}, <<"cowboy/static">>}},
                      {file, <<"bullet.html">>},
                      {mimetypes, [{<<".html">>, [<<"text/html">>]}]}
                     ]},
                    % bullet.js include
-                   {[<<"static">>, <<"bullet.js">>],
-                    cowboy_http_static,
+                   {"/static/bullet.js",
+                    cowboy_static,
                     [
                      {directory, {priv_dir, bullet, []}},
                      {file, <<"bullet.js">>},
                      {mimetypes, [{<<".js">>, [<<"application/javascript">>]}]}
                     ]},
                    % bullet handler
-                   {[<<"bullet">>], bullet_handler, [{handler, {{app_name}}_bullet_handler}]},
+                   {"/bullet", bullet_handler, [{handler, {{app_name}}_bullet_handler}]},
                    % static content
-                   {[<<"static">>, '...'], cowboy_http_static,
+                   {"/static/[...]", cowboy_static,
                      [
                       {directory, {priv_dir, {{app_name}}, <<"cowboy/static">>}},
                       {mimetypes, {fun mimetypes:path_to_mimes/2, default}}

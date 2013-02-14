@@ -14,10 +14,11 @@ start_phase(cowboy, _StartType, _PhaseStartArgs) ->
     {ok, Out} = file:script(Priv ++ "/cowboy.dispatch"),
     [Acceptors, Port, Dispatch] = [proplists:get_value(Key, Out)
                                    || Key <- [acceptors, port, dispatch]],
-    {ok, _PID} = cowboy:start_listener(cowboy_listener, Acceptors,
-                                       cowboy_tcp_transport, [{port, Port}],
-                                       cowboy_http_protocol, [{dispatch, Dispatch}]
-                                      ),
+    CompiledDispatch = cowboy_router:compile(Dispatch),
+    {ok, _PID} = cowboy:start_http(cowboy_listener, Acceptors,
+                                   [{port, Port}],
+                                   [{env, [{dispatch, CompiledDispatch}]}]
+                                  ),
     ok.
 
 stop(_State) ->
