@@ -1,4 +1,4 @@
--module({{module}}).
+-module({{name}}).
 -behaviour(gen_server).
 
 %%% Exports
