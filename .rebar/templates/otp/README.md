@@ -1,9 +1,16 @@
+vim: ft=markdown
 
 # {{app_name}}
 
-description.
+{{app_name}} is amazing.
+
 
 ## Problem
+
+foo has issues.
+
+
 ## Solution
 
-vim: ft=markdown
+{{app_name}} addresses those issues, or perhaps the root problem, so I don't
+have to.
