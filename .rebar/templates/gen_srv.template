@@ -1,2 +1,2 @@
 {variables, [{name, "my_server"}]}.
-{template, "gen_srv.erl", "{{module}}.erl"}.
+{template, "gen_srv.erl", "{{name}}.erl"}.
