@@ -4,6 +4,7 @@
 {template, "otp/otp.erl", "{{app_name}}/src/{{app_name}}.erl"}.
 {template, "otp/otp_sup.erl", "{{app_name}}/src/{{app_name}}_sup.erl"}.
 {file, "otp/rebar", "{{app_name}}/rebar"}.
+{file, "otp/git.ignore", "{{app_name}}/.gitignore"}.
 {chmod, 8#744, "{{app_name}}/rebar"}.
 
 {file, "bullet/rebar.config", "{{app_name}}/rebar.config"}.
